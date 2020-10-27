@@ -15,6 +15,17 @@
  * along with Lapis.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @file lapis.c
+ * @author Sora Tonami (ms0503@outlook.com)
+ * @brief LapisLang Interpreter
+ * @version 0.1
+ * @date 2020-10-27
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #include <regex.h>
 #include <stdbool.h>
 #include <stddef.h>
@@ -32,6 +43,10 @@ void main(int argc, char **argv) {
         switch(opt) {
             case 'f':
                 run(optarg);
+                break;
+            case 'h':
+                showHelp();
+                break;
             case ':':
                 printf("Err: option needs a value.\n");
                 break;
@@ -40,11 +55,12 @@ void main(int argc, char **argv) {
                 break;
         }
     }
+    interpreter();
 
     exit(EXIT_SUCCESS);
 }
 
-void interpriter() {
+void interpreter() {
     exit(EXIT_SUCCESS);
 }
 
@@ -85,5 +101,9 @@ void run(char *filepath) {
         exit(EXIT_CODERUNNER_FAILURE);
     }
 
+    exit(EXIT_SUCCESS);
+}
+
+void showHelp() {
     exit(EXIT_SUCCESS);
 }

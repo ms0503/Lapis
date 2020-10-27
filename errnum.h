@@ -15,8 +15,8 @@
  * along with Lapis.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// 1X - Interpriter Errors
-#define EXIT_INTERPRITER_FAILURE 10
+// 1X - Interpreter Errors
+#define EXIT_INTERPRETER_FAILURE 10
 
 //2X - Code runner Errors
 #define EXIT_CODERUNNER_FAILURE 20
