@@ -18,12 +18,11 @@
 /**
  * @file lapis.c
  * @author Sora Tonami (ms0503@outlook.com)
- * @brief LapisLang Interpreter
- * @version 0.1
- * @date 2020-10-27
+ * @brief LapisLang Interpreter and CodeRunner
+ * @version 0.1.0
+ * @date 2020-10-28
  * 
- * @copyright Copyright (c) 2020
- * 
+ * @copyright Copyright (C) 2020 Sora Tonami
  */
 
 #include <regex.h>
@@ -72,7 +71,7 @@ void run(char *filepath) {
     regex_t **ptn_buf;
     regmatch_t *match_buf;
 
-    if(regcomp(ptn_buf[0], "fnc +main +void", REG_EXTENDED | REG_NEWLINE) != 0) {
+    if(regcomp(ptn_buf[0], "fnc +main\\() +void", REG_EXTENDED | REG_NEWLINE) != 0) {
         printf("Err: Regex compile failed\n");
         exit(EXIT_CODERUNNER_FAILURE);
     }

@@ -15,8 +15,23 @@
  * along with Lapis.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @file errnum.h
+ * @author Sora Tonami (ms0503@outlook.com)
+ * @brief LapisLang Error Number Library
+ * @version 0.1.0
+ * @date 2020-10-28
+ * 
+ * @copyright Copyright (C) 2020 Sora Tonami
+ */
+
 // 1X - Interpreter Errors
+
+// 10 - Interpreter other Error
 #define EXIT_INTERPRETER_FAILURE 10
 
-//2X - Code runner Errors
+
+// 2X - Code runner Errors
+
+// 20 - Code runner other Error
 #define EXIT_CODERUNNER_FAILURE 20
