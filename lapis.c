@@ -21,7 +21,7 @@
  * @brief LapisLang Interpreter and CodeRunner
  * @version 0.1.0
  * @date 2020-10-28
- * 
+ *
  * @copyright Copyright (C) 2020 Sora Tonami
  */
 
@@ -35,6 +35,8 @@
 
 #include "errnum.h"
 
+#define LAST_MODIFY_YEAR 2020
+
 void main(int argc, char **argv) {
     int opt;
 
@@ -42,24 +44,54 @@ void main(int argc, char **argv) {
         switch(opt) {
             case 'f':
                 run(optarg);
-                break;
+                exit(EXIT_SUCCESS);
             case 'h':
                 showHelp();
-                break;
+                exit(EXIT_SUCCESS);
             case ':':
                 printf("Err: option needs a value.\n");
-                break;
+                exit(EXIT_SUCCESS);
             case '?':
                 printf("Wrn: unknown option: %c\n", optopt);
                 break;
         }
     }
     interpreter();
-
-    exit(EXIT_SUCCESS);
 }
 
 void interpreter() {
+    printf("Lapis  Copyright (C) %d  Sora Tonami\n", LAST_MODIFY_YEAR);
+    printf("This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.\n");
+    printf("This is free software, and you are welcome to redistribute it\n");
+    printf("under certain conditions; type `show c' for details.\n");
+    char *str;
+    printf("> ");
+    while(scanf("%s", &str) == 1) {
+        switch(str) {
+            case "show c":
+                printf("IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING\n");
+                printf("WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS\n");
+                printf("THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY\n");
+                printf("GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE\n");
+                printf("USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF\n");
+                printf("DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD\n");
+                printf("PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),\n");
+                printf("EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF\n");
+                printf("SUCH DAMAGES.\n");
+                break;
+            case "show w":
+                printf("THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY\n");
+                printf("APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT\n");
+                printf("HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY\n");
+                printf("OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,\n");
+                printf("THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n");
+                printf("PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM\n");
+                printf("IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF\n");
+                printf("ALL NECESSARY SERVICING, REPAIR OR CORRECTION.\n");
+                break;
+        }
+        printf("> ");
+    }
     exit(EXIT_SUCCESS);
 }
 
